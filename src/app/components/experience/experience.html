@@ -1,0 +1,80 @@
+<div class="sec-head">
+  <span class="sec-num">// 02</span>
+  <span class="sec-title">{{ title() }}</span>
+  <div class="sec-rule"></div>
+</div>
+
+<div class="exp-grid">
+  @for (exp of expItems(); track exp.date) {
+    <div
+      class="flip-card"
+      [class.flipped]="isFlipped(exp.date)"
+      [class.current]="exp.current"
+      role="button"
+      tabindex="0"
+      [attr.aria-pressed]="isFlipped(exp.date)"
+      [attr.aria-label]="exp.coName + ' — ' + exp.role"
+      (click)="toggleFlip(exp.date)"
+      (keydown.enter)="toggleFlip(exp.date)"
+      (keydown.space)="toggleFlip(exp.date); $event.preventDefault()"
+    >
+      <div class="flip-inner">
+        <div class="flip-front">
+          <div class="flip-logo-box">
+            <span class="flip-logo-text">{{ exp.coName }}</span>
+            <div class="flip-scan">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <div class="flip-front-body">
+            <div class="flip-num-row">
+              <span class="flip-num">{{ exp.num }}</span>
+              <span class="flip-co">{{ exp.coName }}</span>
+            </div>
+            <div class="flip-role-row">
+              <span class="flip-bar"></span>
+              <span class="flip-role">{{ exp.role }}</span>
+            </div>
+            <div class="flip-date">{{ exp.date }}</div>
+            <div class="flip-hint">{{ hintFront() }}</div>
+          </div>
+        </div>
+        <div class="flip-back">
+          <div class="exp-top">
+            <span class="exp-role">{{ exp.role }}</span>
+            <span class="exp-date">{{ exp.date }}</span>
+          </div>
+          <div class="exp-co">{{ exp.co }}</div>
+          <ul class="exp-bullets">
+            @for (bullet of exp.bullets; track $index) {
+              <li [innerHTML]="bullet"></li>
+            }
+          </ul>
+          <div class="exp-tags">
+            @for (tag of exp.tags; track tag) {
+              <span class="exp-tag">{{ tag }}</span>
+            }
+          </div>
+          <div class="flip-hint back">{{ hintBack() }}</div>
+        </div>
+      </div>
+    </div>
+  }
+</div>
+
+<div class="early-block">
+  <div class="early-top">
+    <span class="exp-role">{{ earlyHeaderText() }}</span>
+    <span class="exp-date">2011 — 2017</span>
+  </div>
+  <div class="early-grid">
+    @for (e of earlyItems(); track e.co) {
+      <div class="early-card">
+        <div class="er">{{ e.role }}</div>
+        <div class="ec">{{ e.co }}</div>
+        <div class="ed">{{ e.date }}</div>
+        <div class="et">{{ e.desc }}</div>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="stats-grid">
+  @for (item of items(); track item.num) {
+    <div class="stat-cell">
+      <div class="stat-num">{{ item.num }}</div>
+      <div class="stat-label">{{ item.label }}</div>
+    </div>
+  }
+</div>

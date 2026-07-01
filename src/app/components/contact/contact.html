@@ -1,0 +1,41 @@
+<div class="sec-head">
+  <span class="sec-num">// 05</span>
+  <span class="sec-title">{{ title() }}</span>
+  <div class="sec-rule"></div>
+</div>
+
+<div class="contact-term">
+  <div class="term-bar">
+    <span class="term-dot" style="background:#ff5f57"></span>
+    <span class="term-dot" style="background:#febc2e"></span>
+    <span class="term-dot" style="background:#28c840"></span>
+    <span class="term-title">contact.sh</span>
+  </div>
+  <div class="contact-body">
+    <div class="l">{{ c().line0 }}</div>
+    <div class="l">
+      → {{ c().email }}
+      <a class="clink" href="mailto:daniandre18@gmail.com">daniandre18&#64;gmail.com</a>
+      <button class="copy-btn" (click)="copyEmail()">
+        {{ copied() ? c().copied : c().copy }}
+      </button>
+    </div>
+    <div class="l">
+      → {{ c().phone }}
+      <a class="clink" href="tel:+573057104294">+57 305 710 4294</a>
+    </div>
+    <div class="l">
+      → {{ c().linkedin }}
+      <a class="clink" href="https://linkedin.com/in/daniandre91" target="_blank" rel="noopener">
+        linkedin.com/in/daniandre91
+      </a>
+    </div>
+    <div class="l">
+      → {{ c().github }}
+      <a class="clink" href="https://github.com/daniandre18" target="_blank" rel="noopener">
+        github.com/daniandre18
+      </a>
+    </div>
+    <div class="l" style="margin-top:14px;color:var(--text-dim)">{{ c().closing }}</div>
+  </div>
+</div>

@@ -1,0 +1,54 @@
+<div class="term" (click)="focusTerminal()">
+  <div class="term-bar">
+    <span class="term-dot" style="background:#ff5f57"></span>
+    <span class="term-dot" style="background:#febc2e"></span>
+    <span class="term-dot" style="background:#28c840"></span>
+    <span class="term-title">danilo&#64;portfolio — zsh</span>
+  </div>
+  <div class="term-body" #termBodyRef>
+    <div class="term-history">
+      @for (item of history(); track $index) {
+        @if (item.isCMD) {
+          <div class="h-cmd">
+            <span class="p">danilo&#64;bogota</span>&nbsp;~ %&nbsp;<span class="c">{{ item.raw }}</span>
+          </div>
+        } @else {
+          <div class="h-out" [innerHTML]="item.html"></div>
+        }
+      }
+    </div>
+    <div class="term-line term-input-row">
+      <span class="term-prompt">danilo&#64;bogota</span>&nbsp;~ %&nbsp;
+      <input
+        class="term-input"
+        type="text"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        [placeholder]="inputPlaceholder()"
+        aria-label="terminal command input"
+        (keydown.enter)="onEnter($any($event.target))"
+        #termInput
+      >
+      <span class="cursor"></span>
+    </div>
+  </div>
+</div>
+
+<h1 class="hero-name">Danilo Andrés<br><span class="accent">Pineda</span></h1>
+<div class="hero-role">{{ heroRole() }}</div>
+<p class="hero-sub">{{ heroSub() }}</p>
+
+<div class="cmd-row">
+  <button class="cmd-chip" (click)="scrollTo('#experiencia')">$ cat experiencia.log</button>
+  <button class="cmd-chip" (click)="scrollTo('#skills')">$ node skills.json</button>
+  <button class="cmd-chip" (click)="scrollTo('#proyectos')">$ ls proyectos/</button>
+  <button class="cmd-chip" (click)="scrollTo('#contacto')">$ ./contact.sh</button>
+</div>
+
+<a class="btn-download" href="Danilo_Pineda_CV.pdf" download="Danilo_Pineda_CV.pdf">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M5 20h14"/>
+  </svg>
+  <span>{{ downloadLabel() }}</span>
+</a>

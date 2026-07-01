@@ -1,0 +1,20 @@
+<div class="sec-head">
+  <span class="sec-num">// 04</span>
+  <span class="sec-title">{{ title() }}</span>
+  <div class="sec-rule"></div>
+</div>
+
+<div class="proj-grid">
+  @for (proj of projectItems(); track proj.name) {
+    <div class="proj-card">
+      <span class="proj-tag">{{ proj.tag }}</span>
+      <div class="proj-name">{{ proj.name }}</div>
+      <p class="proj-desc">{{ proj.desc }}</p>
+      <div class="proj-stack">
+        @for (tech of proj.stack; track tech) {
+          <span class="exp-tag">{{ tech }}</span>
+        }
+      </div>
+    </div>
+  }
+</div>
