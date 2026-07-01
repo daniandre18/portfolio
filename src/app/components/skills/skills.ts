@@ -5,7 +5,8 @@ import { dict, skills, belts } from '../../data/portfolio.data';
 @Component({
   selector: 'app-skills',
   imports: [],
-  templateUrl: './skills.html'
+  templateUrl: './skills.html',
+  styleUrl: './skills.scss'
 })
 export class SkillsComponent {
   i18n = inject(I18nService);
@@ -19,6 +20,7 @@ export class SkillsComponent {
       const b = belts[s.belt];
       return {
         name: s.name,
+        logo: s.logo,
         stripes: Array(s.stripes).fill(0),
         years: s.years[lang],
         beltLabel: b.label[lang],

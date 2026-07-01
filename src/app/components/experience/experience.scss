@@ -1,0 +1,287 @@
+.exp-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.exp-role {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 17px;
+}
+
+.exp-date {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.exp-co {
+  color: var(--secondary);
+  font-size: 13.5px;
+  margin-bottom: 10px;
+}
+
+.exp-bullets {
+  list-style: none;
+
+  li {
+    position: relative;
+    padding-left: 16px;
+    color: var(--text-mute);
+    font-size: 13.5px;
+    margin-bottom: 6px;
+
+    &::before {
+      content: '›';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+  }
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+/* ---- flip cards ---- */
+.exp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+
+  @media (max-width: 720px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.flip-card {
+  perspective: 1400px;
+  cursor: pointer;
+  height: 440px;
+  outline: none;
+
+  &.flipped .flip-inner {
+    transform: rotateY(180deg);
+  }
+
+  &:focus-visible {
+    .flip-front,
+    .flip-back {
+      border-color: var(--accent);
+    }
+  }
+
+  &:hover {
+    .flip-front,
+    .flip-back {
+      border-color: var(--accent-dim);
+    }
+  }
+
+  &.current .flip-front {
+    border-color: var(--accent);
+  }
+
+  @media (max-width: 720px) {
+    height: 460px;
+  }
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s cubic-bezier(.4, .15, .2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 10px;
+  border: 1px solid var(--secondary);
+  background: var(--bg-panel);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: border-color .25s;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
+  padding: 18px 20px;
+  overflow-y: auto;
+
+  .exp-tags {
+    margin-top: auto;
+    padding-top: 10px;
+  }
+}
+
+.flip-logo-box {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  background: #031528;
+  border-bottom: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+}
+
+.flip-logo-img {
+  width: 120px;
+  height: 56px;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  opacity: .95;
+
+  &.mono {
+    filter: brightness(0) invert(1);
+    opacity: .88;
+  }
+}
+
+.flip-front-body {
+  padding: 14px 18px 16px;
+}
+
+.flip-num-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.flip-num {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--secondary);
+}
+
+.flip-co {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.flip-role-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.flip-bar {
+  width: 3px;
+  align-self: stretch;
+  min-height: 18px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.flip-role {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: -.1px;
+}
+
+.flip-date {
+  font-family: var(--mono);
+  font-weight: 600;
+  font-size: 12.5px;
+  letter-spacing: .4px;
+  color: var(--text);
+  margin: 8px 0 10px 11px;
+}
+
+.flip-hint {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  &::before {
+    content: '⟳';
+    font-size: 12px;
+  }
+
+  &.back {
+    margin-top: 10px;
+  }
+}
+
+.flip-front .flip-hint {
+  margin-left: 10px;
+}
+
+/* ---- early years ---- */
+.early-block {
+  margin-top: 30px;
+}
+
+.early-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.early-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 8px;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.early-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 13px 14px;
+
+  .er {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 13px;
+  }
+
+  .ec {
+    color: var(--secondary);
+    font-size: 11px;
+    margin: 3px 0 6px;
+  }
+
+  .ed {
+    color: var(--text-dim);
+    font-size: 11px;
+    margin-bottom: 6px;
+    font-family: var(--mono);
+  }
+
+  .et {
+    color: var(--text-mute);
+    font-size: 11.5px;
+  }
+}

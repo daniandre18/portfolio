@@ -5,7 +5,8 @@ import { dict } from '../../data/portfolio.data';
 @Component({
   selector: 'app-about',
   imports: [],
-  templateUrl: './about.html'
+  templateUrl: './about.html',
+  styleUrl: './about.scss'
 })
 export class AboutComponent {
   i18n = inject(I18nService);

@@ -1,17 +1,25 @@
 import { Component, ElementRef, OnInit, ViewChild, inject, signal, computed, effect } from '@angular/core';
 import { I18nService } from '../../services/i18n.service';
-import { dict } from '../../data/portfolio.data';
+import { dict, Lang } from '../../data/portfolio.data';
+
+type OutputKind =
+  | 'welcome' | 'help' | 'whoami'
+  | 'navExperience' | 'navSkills' | 'navProjects' | 'navContact'
+  | 'coffee' | 'bjj' | 'langSwitched' | 'notFound';
 
 interface HistoryItem {
   isCMD: boolean;
   raw?: string;
+  kind?: OutputKind;
+  param?: string;
   html?: string;
 }
 
 @Component({
   selector: 'app-hero',
   imports: [],
-  templateUrl: './hero.html'
+  templateUrl: './hero.html',
+  styleUrl: './hero.scss'
 })
 export class HeroComponent implements OnInit {
   i18n = inject(I18nService);
@@ -25,20 +33,27 @@ export class HeroComponent implements OnInit {
   readonly downloadLabel = computed(() => dict.downloadCv[this.i18n.lang()]);
   readonly inputPlaceholder = computed(() => this.i18n.lang() === 'es' ? "escribe 'help'…" : "type 'help'…");
 
+  readonly historyView = computed(() => {
+    const lang = this.i18n.lang();
+    return this.history().map(item => item.isCMD
+      ? item
+      : { ...item, html: this.renderOutput(item.kind!, lang, item.param) });
+  });
+
   private langChangedMsg = false;
 
   constructor() {
     effect(() => {
       const lang = this.i18n.lang();
       if (this.langChangedMsg) {
-        this.appendOutput(dict.termLangSwitched[lang]);
+        this.appendOutput('langSwitched', lang);
       }
       this.langChangedMsg = true;
     });
   }
 
   ngOnInit() {
-    this.appendOutput(dict.termWelcome[this.i18n.lang()]);
+    this.appendOutput('welcome');
   }
 
   scrollTo(id: string) {
@@ -56,12 +71,30 @@ export class HeroComponent implements OnInit {
     input?.focus();
   }
 
+  private renderOutput(kind: OutputKind, lang: Lang, param?: string): string {
+    switch (kind) {
+      case 'welcome': return dict.termWelcome[lang];
+      case 'help': return dict.termHelp[lang].replace(/\n/g, '<br>');
+      case 'whoami': return dict.termWhoami[lang].replace(/\n/g, '<br>');
+      case 'navExperience': return dict.termNav.experience[lang];
+      case 'navSkills': return dict.termNav.skills[lang];
+      case 'navProjects': return dict.termNav.projects[lang];
+      case 'navContact': return dict.termNav.contact[lang];
+      case 'coffee': return dict.termCoffee[lang];
+      case 'bjj': return dict.termOss[lang];
+      case 'langSwitched': return dict.termLangSwitched[(param as Lang) ?? lang];
+      case 'notFound': return lang === 'es'
+        ? `bash: ${param}: comando no encontrado. Escribe "help" para ver opciones.`
+        : `bash: ${param}: command not found. Type "help" to see options.`;
+    }
+  }
+
   private appendCmd(raw: string) {
     this.history.update(h => [...h, { isCMD: true, raw }]);
   }
 
-  private appendOutput(html: string) {
-    this.history.update(h => [...h, { isCMD: false, html }]);
+  private appendOutput(kind: OutputKind, param?: string) {
+    this.history.update(h => [...h, { isCMD: false, kind, param }]);
     setTimeout(() => {
       if (this.termBodyRef) {
         this.termBodyRef.nativeElement.scrollTop = this.termBodyRef.nativeElement.scrollHeight;
@@ -80,37 +113,32 @@ export class HeroComponent implements OnInit {
       return;
     }
 
-    const lang = this.i18n.lang();
-
     if (cmd === 'help') {
-      this.appendOutput(dict.termHelp[lang].replace(/\n/g, '<br>'));
+      this.appendOutput('help');
     } else if (cmd === 'whoami' || cmd === 'whoami --verbose') {
-      this.appendOutput(dict.termWhoami[lang].replace(/\n/g, '<br>'));
+      this.appendOutput('whoami');
     } else if (cmd === 'experience' || cmd === 'experiencia') {
-      this.appendOutput(dict.termNav.experience[lang]);
+      this.appendOutput('navExperience');
       document.getElementById('experiencia')?.scrollIntoView({ behavior: 'smooth' });
     } else if (cmd === 'skills') {
-      this.appendOutput(dict.termNav.skills[lang]);
+      this.appendOutput('navSkills');
       document.getElementById('skills')?.scrollIntoView({ behavior: 'smooth' });
     } else if (cmd === 'projects' || cmd === 'proyectos') {
-      this.appendOutput(dict.termNav.projects[lang]);
+      this.appendOutput('navProjects');
       document.getElementById('proyectos')?.scrollIntoView({ behavior: 'smooth' });
     } else if (cmd === 'contact' || cmd === 'contacto') {
-      this.appendOutput(dict.termNav.contact[lang]);
+      this.appendOutput('navContact');
       document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
     } else if (cmd === 'sudo make-coffee' || cmd === 'make-coffee') {
-      this.appendOutput(dict.termCoffee[lang]);
+      this.appendOutput('coffee');
     } else if (cmd === 'bjj' || cmd === 'jiujitsu') {
-      this.appendOutput(dict.termOss[lang]);
+      this.appendOutput('bjj');
     } else if (cmd === 'lang en') {
       this.i18n.set('en');
     } else if (cmd === 'lang es') {
       this.i18n.set('es');
     } else {
-      const notFound = lang === 'es'
-        ? `bash: ${raw.trim()}: comando no encontrado. Escribe "help" para ver opciones.`
-        : `bash: ${raw.trim()}: command not found. Type "help" to see options.`;
-      this.appendOutput(notFound);
+      this.appendOutput('notFound', raw.trim());
     }
 
     setTimeout(() => {

@@ -21,10 +21,7 @@
       <div class="flip-inner">
         <div class="flip-front">
           <div class="flip-logo-box">
-            <span class="flip-logo-text">{{ exp.coName }}</span>
-            <div class="flip-scan">
-              <span></span><span></span><span></span>
-            </div>
+            <img [src]="exp.logo" [alt]="exp.coName" class="flip-logo-img" [class.mono]="exp.logoMono" />
           </div>
           <div class="flip-front-body">
             <div class="flip-num-row">

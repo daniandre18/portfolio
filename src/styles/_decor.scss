@@ -1,0 +1,47 @@
+.bg-decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity .5s ease;
+
+  body.light & {
+    opacity: 0;
+  }
+}
+
+.decor-icon {
+  position: absolute;
+  font-size: var(--s, 28px);
+  color: var(--c, var(--text-dim));
+  opacity: var(--o, .08);
+  animation: drift var(--dur, 9s) ease-in-out infinite;
+  animation-delay: var(--delay, 0s);
+  transform: rotate(var(--r, 0deg));
+  user-select: none;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+
+  50% {
+    transform: translateY(-22px) rotate(calc(var(--r, 0deg) + 8deg));
+  }
+}
+
+app-hero,
+main,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+app-navbar {
+  position: relative;
+  z-index: 2;
+}

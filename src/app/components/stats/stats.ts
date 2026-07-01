@@ -5,7 +5,8 @@ import { stats } from '../../data/portfolio.data';
 @Component({
   selector: 'app-stats',
   imports: [],
-  templateUrl: './stats.html'
+  templateUrl: './stats.html',
+  styleUrl: './stats.scss'
 })
 export class StatsComponent {
   i18n = inject(I18nService);

@@ -1,0 +1,107 @@
+.belt-note {
+  color: var(--text-mute);
+  font-size: 13.5px;
+  margin-bottom: 26px;
+  max-width: 65ch;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+
+  @media (max-width: 680px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.skill-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.skill-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.skill-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.skill-logo {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: #fff;
+  border: 1px solid var(--border-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.skill-name {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 14.5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.belt-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: #11141a;
+  font-weight: 600;
+}
+
+.belt-bar {
+  height: 9px;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.stripes {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  padding: 0 6px;
+  align-items: center;
+}
+
+.stripe {
+  width: 3px;
+  height: 7px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .35);
+}
+
+.skill-years {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--text-dim);
+  margin-top: 7px;
+}

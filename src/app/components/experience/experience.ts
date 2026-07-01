@@ -5,7 +5,8 @@ import { dict, expData, earlyData, earlyHeader } from '../../data/portfolio.data
 @Component({
   selector: 'app-experience',
   imports: [],
-  templateUrl: './experience.html'
+  templateUrl: './experience.html',
+  styleUrl: './experience.scss'
 })
 export class ExperienceComponent {
   i18n = inject(I18nService);
@@ -24,6 +25,8 @@ export class ExperienceComponent {
       date: e.date,
       co: e.co,
       coName: e.co.split('·')[0].trim(),
+      logo: e.logo,
+      logoMono: e.logoMono !== false,
       num: String(i + 1).padStart(2, '0'),
       role: e.role[lang],
       bullets: e.bullets[lang],

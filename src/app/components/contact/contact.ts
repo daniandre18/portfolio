@@ -5,7 +5,8 @@ import { dict } from '../../data/portfolio.data';
 @Component({
   selector: 'app-contact',
   imports: [],
-  templateUrl: './contact.html'
+  templateUrl: './contact.html',
+  styleUrl: './contact.scss'
 })
 export class ContactComponent {
   i18n = inject(I18nService);

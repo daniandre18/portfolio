@@ -9,6 +9,8 @@ export interface ExpItem {
   current?: boolean;
   date: string;
   co: string;
+  logo: string;
+  logoMono?: boolean;
   role: BiLingual;
   bullets: { es: string[]; en: string[] };
   tags: string[];
@@ -33,6 +35,7 @@ export interface SkillItem {
   name: string;
   belt: BeltKey;
   stripes: number;
+  logo?: string;
   years: BiLingual;
 }
 
@@ -124,15 +127,15 @@ export const dict = {
   },
   termLangSwitched: { es: 'Idioma cambiado a español.', en: 'Language switched to English.' },
   contact: {
-    es: { line0: '$ ./contact.sh --reach-out', email: 'email:', phone: 'teléfono:', linkedin: 'linkedin:', github: 'github:', copy: 'copiar', copied: '¡copiado!', closing: '# proceso completado — listo para la siguiente llamada.' },
-    en: { line0: '$ ./contact.sh --reach-out', email: 'email:', phone: 'phone:', linkedin: 'linkedin:', github: 'github:', copy: 'copy', copied: 'copied!', closing: '# process complete — ready for the next call.' }
+    es: { line0: '$ ./contact.sh --reach-out', email: 'email:', phone: 'teléfono:', linkedin: 'linkedin:', github: 'github:', copy: 'copiar', copied: '¡copiado!', closing: '# proceso completado — listo para la siguiente llamada.', cta: 'Escríbeme' },
+    en: { line0: '$ ./contact.sh --reach-out', email: 'email:', phone: 'phone:', linkedin: 'linkedin:', github: 'github:', copy: 'copy', copied: 'copied!', closing: '# process complete — ready for the next call.', cta: 'Email me' }
   }
 };
 
 /* ============ EXPERIENCE DATA ============ */
 export const expData: ExpItem[] = [
   {
-    current: true, date: 'ABR 2023 — MAY 2026', co: 'ADI Digital Lab S.A. · Bogotá',
+    date: 'ABR 2023 — MAY 2026', co: 'ADL Digital Lab S.A. · Bogotá', logo: 'logos/adl-digital-lab.svg',
     role: { es: 'Ingeniero Frontend SSR', en: 'Frontend SSR Engineer' },
     bullets: {
       es: [
@@ -153,7 +156,7 @@ export const expData: ExpItem[] = [
     tags: ['Angular', 'React JS', 'Microfrontend', 'AWS Lambda', 'Node JS', 'Quarkus', 'CI/CD']
   },
   {
-    date: 'JUL 2022 — FEB 2023', co: 'Novatec S.A. · Bogotá',
+    date: 'JUL 2022 — FEB 2023', co: 'Novatec S.A. · Bogotá', logo: 'logos/novatec.png',
     role: { es: 'Ingeniero de Desarrollo Full Stack', en: 'Full Stack Development Engineer' },
     bullets: {
       es: [
@@ -170,7 +173,7 @@ export const expData: ExpItem[] = [
     tags: ['Spring Boot', 'Java', 'Node JS', 'Angular', 'Docker', 'SQL Server']
   },
   {
-    date: 'JUL 2021 — FEB 2022', co: 'Accenture S.A. · Bogotá',
+    date: 'JUL 2021 — FEB 2022', co: 'Accenture S.A. · Bogotá', logo: 'logos/accenture.svg',
     role: { es: 'Senior Analyst .NET / Full Stack', en: 'Senior Analyst .NET / Full Stack' },
     bullets: {
       es: [
@@ -185,7 +188,7 @@ export const expData: ExpItem[] = [
     tags: ['C# / .NET', 'REST API', 'MongoDB', 'HTML5']
   },
   {
-    date: 'JUL 2017 — JUL 2021', co: 'IFX Networks · Bogotá',
+    date: 'JUL 2017 — JUL 2021', co: 'IFX Networks · Bogotá', logo: 'logos/ifx-networks.svg',
     role: { es: 'Ing. de Desarrollo — Cloud & Automatización', en: 'Development Engineer — Cloud & Automation' },
     bullets: {
       es: [
@@ -235,15 +238,15 @@ export const belts: Record<BeltKey, Belt> = {
 
 /* ============ SKILLS ============ */
 export const skills: SkillItem[] = [
-  { name: 'Angular',           belt: 'black',  stripes: 4, years: { es: '10+ años', en: '10+ years' } },
-  { name: '.NET / C#',         belt: 'black',  stripes: 3, years: { es: '9 años', en: '9 years' } },
-  { name: 'React JS',          belt: 'brown',  stripes: 3, years: { es: '5 años', en: '5 years' } },
-  { name: 'Java / Spring Boot',belt: 'brown',  stripes: 2, years: { es: '5 años', en: '5 years' } },
-  { name: 'Node.js',           belt: 'brown',  stripes: 3, years: { es: '6 años', en: '6 years' } },
-  { name: 'TypeScript',        belt: 'brown',  stripes: 2, years: { es: '6 años', en: '6 years' } },
-  { name: 'Ionic / Móvil',     belt: 'purple', stripes: 2, years: { es: 'app bancaria Banco Popular', en: 'banking app, Banco Popular' } },
-  { name: 'AWS Cloud / Lambda',belt: 'blue',   stripes: 3, years: { es: 'certificado 2026', en: 'certified 2026' } },
-  { name: 'Docker / Kubernetes',belt: 'blue',  stripes: 2, years: { es: '4 años', en: '4 years' } },
+  { name: 'Angular',           belt: 'black',  stripes: 4, logo: 'logos/tech/angular.svg',    years: { es: '10+ años', en: '10+ years' } },
+  { name: '.NET / C#',         belt: 'black',  stripes: 3, logo: 'logos/tech/dotnet.svg',     years: { es: '9 años', en: '9 years' } },
+  { name: 'React JS',          belt: 'brown',  stripes: 3, logo: 'logos/tech/react.svg',      years: { es: '5 años', en: '5 years' } },
+  { name: 'Java / Spring Boot',belt: 'brown',  stripes: 2, logo: 'logos/tech/spring.svg',     years: { es: '5 años', en: '5 years' } },
+  { name: 'Node.js',           belt: 'brown',  stripes: 3, logo: 'logos/tech/nodedotjs.svg',  years: { es: '6 años', en: '6 years' } },
+  { name: 'TypeScript',        belt: 'brown',  stripes: 2, logo: 'logos/tech/typescript.svg', years: { es: '6 años', en: '6 years' } },
+  { name: 'Ionic / Móvil',     belt: 'purple', stripes: 2, logo: 'logos/tech/ionic.svg',      years: { es: 'app bancaria Banco Popular', en: 'banking app, Banco Popular' } },
+  { name: 'AWS Cloud / Lambda',belt: 'blue',   stripes: 3, logo: 'logos/tech/aws.svg',        years: { es: 'certificado 2026', en: 'certified 2026' } },
+  { name: 'Docker / Kubernetes',belt: 'blue',  stripes: 2, logo: 'logos/tech/docker.svg',     years: { es: '4 años', en: '4 years' } },
   { name: 'AI-First / Spec-Driven', belt: 'blue', stripes: 1, years: { es: 'adopción reciente', en: 'recent adoption' } },
 ];
 

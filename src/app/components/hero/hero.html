@@ -7,7 +7,7 @@
   </div>
   <div class="term-body" #termBodyRef>
     <div class="term-history">
-      @for (item of history(); track $index) {
+      @for (item of historyView(); track $index) {
         @if (item.isCMD) {
           <div class="h-cmd">
             <span class="p">danilo&#64;bogota</span>&nbsp;~ %&nbsp;<span class="c">{{ item.raw }}</span>
@@ -35,9 +35,16 @@
   </div>
 </div>
 
-<h1 class="hero-name">Danilo Andrés<br><span class="accent">Pineda</span></h1>
-<div class="hero-role">{{ heroRole() }}</div>
-<p class="hero-sub">{{ heroSub() }}</p>
+<div class="hero-head">
+  <div class="hero-heading">
+    <h1 class="hero-name">Danilo Andrés <br><span class="accent">Pineda</span></h1>
+    <div class="hero-role">{{ heroRole() }}</div>
+    <p class="hero-sub">{{ heroSub() }}</p>
+  </div>
+  <div class="avatar">
+    <img src="avatar-placeholder.svg" alt="Danilo Andrés Pineda" />
+  </div>
+</div>
 
 <div class="cmd-row">
   <button class="cmd-chip" (click)="scrollTo('#experiencia')">$ cat experiencia.log</button>

@@ -10,7 +10,14 @@
   @for (skill of skillItems(); track skill.name) {
     <div class="skill-card">
       <div class="skill-top">
-        <span class="skill-name">{{ skill.name }}</span>
+        <div class="skill-name-row">
+          @if (skill.logo) {
+            <span class="skill-logo">
+              <img [src]="skill.logo" [alt]="skill.name" />
+            </span>
+          }
+          <span class="skill-name">{{ skill.name }}</span>
+        </div>
         <span class="belt-label"
               [style.background]="skill.beltColor"
               [style.color]="skill.beltTextOn">

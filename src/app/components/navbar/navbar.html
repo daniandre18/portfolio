@@ -1,26 +1,38 @@
 <nav class="tabbar">
   <div class="tabbar-inner">
-    <button class="tab" [class.active]="activeSection() === 'hero'" (click)="scrollTo('#hero')">
-      <span class="dot">●</span> whoami.ts
-    </button>
-    <button class="tab" [class.active]="activeSection() === 'experiencia'" (click)="scrollTo('#experiencia')">
-      <span class="dot">●</span> experience.log
-    </button>
-    <button class="tab" [class.active]="activeSection() === 'skills'" (click)="scrollTo('#skills')">
-      <span class="dot">●</span> skills.json
-    </button>
-    <button class="tab" [class.active]="activeSection() === 'proyectos'" (click)="scrollTo('#proyectos')">
-      <span class="dot">●</span> projects.md
-    </button>
-    <button class="tab" [class.active]="activeSection() === 'contacto'" (click)="scrollTo('#contacto')">
-      <span class="dot">●</span> contact.sh
-    </button>
+    <div class="tabbar-tabs" [class.open]="menuOpen()" id="navTabs">
+      <button class="tab" [class.active]="activeSection() === 'hero'" (click)="scrollTo('#hero')">
+        <span class="dot">●</span> whoami.ts
+      </button>
+      <button class="tab" [class.active]="activeSection() === 'experiencia'" (click)="scrollTo('#experiencia')">
+        <span class="dot">●</span> experience.log
+      </button>
+      <button class="tab" [class.active]="activeSection() === 'skills'" (click)="scrollTo('#skills')">
+        <span class="dot">●</span> skills.json
+      </button>
+      <button class="tab" [class.active]="activeSection() === 'proyectos'" (click)="scrollTo('#proyectos')">
+        <span class="dot">●</span> projects.md
+      </button>
+      <button class="tab" [class.active]="activeSection() === 'contacto'" (click)="scrollTo('#contacto')">
+        <span class="dot">●</span> contact.sh
+      </button>
+    </div>
     <div class="toggles">
       <button class="pill-btn" (click)="i18n.toggle()" aria-label="Switch language">
         🌐 <span>{{ langNextLabel() }}</span>
       </button>
       <button class="pill-btn" (click)="theme.toggle()" aria-label="Cambiar tema">
         {{ themeIcon() }} <span>{{ themeLabel() }}</span>
+      </button>
+      <button
+        class="menu-toggle"
+        type="button"
+        (click)="toggleMenu()"
+        [attr.aria-expanded]="menuOpen()"
+        aria-controls="navTabs"
+        [attr.aria-label]="menuAriaLabel()"
+      >
+        <span class="menu-icon" [class.open]="menuOpen()"></span>
       </button>
     </div>
   </div>

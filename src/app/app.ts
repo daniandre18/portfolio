@@ -23,6 +23,6 @@ import { RevealDirective } from './directives/reveal.directive';
     RevealDirective
   ],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.scss'
 })
 export class App {}

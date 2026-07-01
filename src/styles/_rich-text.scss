@@ -1,0 +1,56 @@
+// Selectors targeting markup injected via [innerHTML] must stay global:
+// Angular's emulated encapsulation never stamps its scoping attribute on
+// dynamically-inserted HTML, so a scoped rule silently stops matching it.
+.about-grid {
+  p {
+    color: var(--text-mute);
+    margin-bottom: 14px;
+    font-size: 15px;
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 9px 0;
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 13px;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.info-k {
+  font-family: var(--mono);
+  color: var(--text-dim);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.info-v {
+  color: var(--text);
+  text-align: right;
+}
+
+.belt-note code {
+  font-family: var(--mono);
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12.5px;
+}
+
+.term-history .h-out strong {
+  color: var(--accent);
+  font-weight: 600;
+}

@@ -1,0 +1,9 @@
+// body.light rules targeting component-owned classes must stay global:
+// Angular's emulated encapsulation can't scope a <body>-rooted selector.
+body.light .tabbar {
+  background: rgba(245, 243, 238, .88);
+}
+
+body.light .flip-logo-box {
+  background: #3a6ea5;
+}
