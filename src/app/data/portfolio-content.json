@@ -216,6 +216,39 @@
       ]
     },
     {
+      "tag": { "es": "Banca digital · Interno", "en": "Digital banking · Internal" },
+      "name": { "es": "Banco Santander — Adquisición de vehículos", "en": "Banco Santander — Vehicle acquisition" },
+      "co": "Novatec",
+      "desc": {
+        "es": "Plataforma de servicios financieros para adquisición de vehículos de Banco Santander, con microservicios de integración bancaria en tiempo real. Sistema interno, sin acceso público.",
+        "en": "Financial services platform for vehicle acquisition at Banco Santander, with real-time banking integration microservices. Internal system, no public access."
+      },
+      "stack": ["Angular", "Spring Boot", "Java", "SQL Server"],
+      "logo": "logos/santander.png"
+    },
+    {
+      "tag": { "es": "Telco · Interno", "en": "Telco · Internal" },
+      "name": { "es": "ETB — Promociones y facturación", "en": "ETB — Promotions & billing" },
+      "co": "Accenture",
+      "desc": {
+        "es": "Diseños funcionales y microservicios para las áreas de promociones, aprovisionamiento y facturación de ETB, con APIs REST integradas a sistemas legacy. Sistema interno, sin acceso público.",
+        "en": "Functional designs and microservices for ETB's promotions, provisioning and billing areas, with REST APIs integrated with legacy systems. Internal system, no public access."
+      },
+      "stack": ["C# / .NET", "REST API", "MongoDB", "HTML5"],
+      "logo": "logos/etb.png"
+    },
+    {
+      "tag": { "es": "Cloud & DevOps · Interno", "en": "Cloud & DevOps · Internal" },
+      "name": { "es": "Plataforma de aprovisionamiento cloud", "en": "Cloud provisioning platform" },
+      "co": "IFX Networks",
+      "desc": {
+        "es": "Plataforma interna de automatización para el aprovisionamiento de infraestructura cloud, construida con .NET, Node.js, Angular, React JS y PowerShell. Redujo las cargas operativas del equipo en un 60%. Sistema interno, sin acceso público.",
+        "en": "Internal automation platform for cloud infrastructure provisioning, built with .NET, Node.js, Angular, React JS and PowerShell. Cut the team's operational workload by 60%. Internal system, no public access."
+      },
+      "stack": [".NET", "Node.js", "Angular", "React JS", "PowerShell"],
+      "logo": "logos/cloud-platform.svg"
+    },
+    {
       "tag": { "es": "AI Agent · Automatización", "en": "AI Agent · Automation" },
       "name": { "es": "Validador de pedidos COD", "en": "COD order validator" },
       "desc": {
