@@ -1,8 +1,8 @@
 {
   "dict": {
     "heroSub": {
-      "es": "Construyo interfaces con Angular y React, backends con Java/Spring Boot y .NET, y últimamente agentes de IA que automatizan procesos reales — desde validar pedidos hasta aprovisionar infraestructura cloud. Cinturón azul de BJJ: ahí aprendí a sostener la calma cuando la presión aprieta.",
-      "en": "I build interfaces with Angular and React, backends with Java/Spring Boot and .NET, and lately, AI agents that automate real processes — from validating orders to provisioning cloud infrastructure. Blue belt in BJJ: that's where I learned to stay calm when the pressure's on."
+      "es": "Construyo interfaces con Angular y React, backends con Java/Spring Boot y .NET, y últimamente agentes de IA que automatizan procesos reales — desde validar pedidos hasta aprovisionar infraestructura cloud.",
+      "en": "I build interfaces with Angular and React, backends with Java/Spring Boot and .NET, and lately, AI agents that automate real processes — from validating orders to provisioning cloud infrastructure."
     },
     "heroRole": {
       "es": "FULL STACK ENGINEER SR · 10+ AÑOS · BOGOTÁ, COLOMBIA",
@@ -56,10 +56,6 @@
     "termCoffee": {
       "es": "☕ Preparando café… listo. Productividad +100%.",
       "en": "☕ Brewing coffee… done. Productivity +100%."
-    },
-    "termOss": {
-      "es": "Cinturón azul de BJJ. Sostengo posición incluso bajo presión de deadline.",
-      "en": "Blue belt in BJJ. I hold position even under deadline pressure."
     },
     "termLangSwitched": { "es": "Idioma cambiado a español.", "en": "Language switched to English." },
     "contact": {

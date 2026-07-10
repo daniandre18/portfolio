@@ -8,70 +8,78 @@
 
 <div class="skill-group">
   <div class="skill-group-label">{{ frontendLabel() }}</div>
-  <div class="marquee marquee-left">
-    <div class="marquee-track">
-      @for (skill of frontendItems(); track $index) {
-        <div class="skill-card">
-          <div class="skill-top">
-            <div class="skill-name-row">
-              @if (skill.logo) {
-                <span class="skill-logo">
-                  <img [src]="skill.logo" [alt]="skill.name" />
-                </span>
-              }
-              <span class="skill-name">{{ skill.name }}</span>
+  <div class="marquee-row">
+    <button class="marquee-btn" (click)="nudge('front', -1)" aria-label="Anterior">‹</button>
+    <div class="marquee" (mouseenter)="setPaused('front', true)" (mouseleave)="setPaused('front', false)">
+      <div class="marquee-track" #frontTrack>
+        @for (skill of frontendItems(); track $index) {
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-name-row">
+                @if (skill.logo) {
+                  <span class="skill-logo">
+                    <img [src]="skill.logo" [alt]="skill.name" />
+                  </span>
+                }
+                <span class="skill-name">{{ skill.name }}</span>
+              </div>
+              <span class="belt-label"
+                    [style.background]="skill.beltColor"
+                    [style.color]="skill.beltTextOn">
+                {{ skill.beltLabel }}
+              </span>
             </div>
-            <span class="belt-label"
-                  [style.background]="skill.beltColor"
-                  [style.color]="skill.beltTextOn">
-              {{ skill.beltLabel }}
-            </span>
-          </div>
-          <div class="belt-bar" [style.background]="skill.beltColor">
-            <div class="stripes">
-              @for (s of skill.stripes; track $index) {
-                <span class="stripe"></span>
-              }
+            <div class="belt-bar" [style.background]="skill.beltColor">
+              <div class="stripes">
+                @for (s of skill.stripes; track $index) {
+                  <span class="stripe"></span>
+                }
+              </div>
             </div>
+            <div class="skill-years">{{ skill.years }}</div>
           </div>
-          <div class="skill-years">{{ skill.years }}</div>
-        </div>
-      }
+        }
+      </div>
     </div>
+    <button class="marquee-btn" (click)="nudge('front', 1)" aria-label="Siguiente">›</button>
   </div>
 </div>
 
 <div class="skill-group">
   <div class="skill-group-label">{{ backendLabel() }}</div>
-  <div class="marquee marquee-right">
-    <div class="marquee-track">
-      @for (skill of backendItems(); track $index) {
-        <div class="skill-card">
-          <div class="skill-top">
-            <div class="skill-name-row">
-              @if (skill.logo) {
-                <span class="skill-logo">
-                  <img [src]="skill.logo" [alt]="skill.name" />
-                </span>
-              }
-              <span class="skill-name">{{ skill.name }}</span>
+  <div class="marquee-row">
+    <button class="marquee-btn" (click)="nudge('back', -1)" aria-label="Anterior">‹</button>
+    <div class="marquee" (mouseenter)="setPaused('back', true)" (mouseleave)="setPaused('back', false)">
+      <div class="marquee-track" #backTrack>
+        @for (skill of backendItems(); track $index) {
+          <div class="skill-card">
+            <div class="skill-top">
+              <div class="skill-name-row">
+                @if (skill.logo) {
+                  <span class="skill-logo">
+                    <img [src]="skill.logo" [alt]="skill.name" />
+                  </span>
+                }
+                <span class="skill-name">{{ skill.name }}</span>
+              </div>
+              <span class="belt-label"
+                    [style.background]="skill.beltColor"
+                    [style.color]="skill.beltTextOn">
+                {{ skill.beltLabel }}
+              </span>
             </div>
-            <span class="belt-label"
-                  [style.background]="skill.beltColor"
-                  [style.color]="skill.beltTextOn">
-              {{ skill.beltLabel }}
-            </span>
-          </div>
-          <div class="belt-bar" [style.background]="skill.beltColor">
-            <div class="stripes">
-              @for (s of skill.stripes; track $index) {
-                <span class="stripe"></span>
-              }
+            <div class="belt-bar" [style.background]="skill.beltColor">
+              <div class="stripes">
+                @for (s of skill.stripes; track $index) {
+                  <span class="stripe"></span>
+                }
+              </div>
             </div>
+            <div class="skill-years">{{ skill.years }}</div>
           </div>
-          <div class="skill-years">{{ skill.years }}</div>
-        </div>
-      }
+        }
+      </div>
     </div>
+    <button class="marquee-btn" (click)="nudge('back', 1)" aria-label="Siguiente">›</button>
   </div>
 </div>

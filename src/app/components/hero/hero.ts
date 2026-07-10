@@ -5,7 +5,7 @@ import { dict, Lang } from '../../data/portfolio.data';
 type OutputKind =
   | 'welcome' | 'help' | 'whoami'
   | 'navExperience' | 'navSkills' | 'navProjects' | 'navContact'
-  | 'coffee' | 'bjj' | 'langSwitched' | 'notFound';
+  | 'coffee' | 'langSwitched' | 'notFound';
 
 interface HistoryItem {
   isCMD: boolean;
@@ -77,7 +77,6 @@ export class HeroComponent implements OnInit {
       case 'navProjects': return dict.termNav.projects[lang];
       case 'navContact': return dict.termNav.contact[lang];
       case 'coffee': return dict.termCoffee[lang];
-      case 'bjj': return dict.termOss[lang];
       case 'langSwitched': return dict.termLangSwitched[(param as Lang) ?? lang];
       case 'notFound': return lang === 'es'
         ? `bash: ${param}: comando no encontrado. Escribe "help" para ver opciones.`
@@ -127,8 +126,6 @@ export class HeroComponent implements OnInit {
       document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
     } else if (cmd === 'sudo make-coffee' || cmd === 'make-coffee') {
       this.appendOutput('coffee');
-    } else if (cmd === 'bjj' || cmd === 'jiujitsu') {
-      this.appendOutput('bjj');
     } else if (cmd === 'lang en') {
       this.i18n.set('en');
     } else if (cmd === 'lang es') {
