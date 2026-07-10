@@ -33,7 +33,7 @@ export interface Belt {
 
 export type BeltKey = 'white' | 'blue' | 'purple' | 'brown' | 'black';
 
-export type SkillCategory = 'frontend' | 'backend';
+export type SkillCategory = 'frontend' | 'backend' | 'database' | 'tools' | 'testing';
 
 export interface SkillItem {
   name: string;

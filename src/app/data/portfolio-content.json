@@ -18,6 +18,10 @@
     "skillsTitle": { "es": "Stack técnico", "en": "Tech stack" },
     "skillsFrontend": { "es": "Frontend", "en": "Frontend" },
     "skillsBackend": { "es": "Backend", "en": "Backend" },
+    "skillsDatabase": { "es": "Bases de datos", "en": "Databases" },
+    "skillsTools": { "es": "Herramientas", "en": "Tools" },
+    "skillsTesting": { "es": "Testing", "en": "Testing" },
+    "skillsAll": { "es": "Todos", "en": "All" },
     "projTitle": { "es": "Portafolio", "en": "Portfolio" },
     "projVisit": { "es": "Visitar", "en": "Visit" },
     "contactTitle": { "es": "Contacto", "en": "Contact" },
@@ -61,8 +65,8 @@
     },
     "termLangSwitched": { "es": "Idioma cambiado a español.", "en": "Language switched to English." },
     "contact": {
-      "es": { "line0": "$ ./contact.sh --reach-out", "email": "email:", "phone": "teléfono:", "linkedin": "linkedin:", "github": "github:", "copy": "copiar", "copied": "¡copiado!", "closing": "# proceso completado — listo para la siguiente llamada.", "cta": "Escríbeme" },
-      "en": { "line0": "$ ./contact.sh --reach-out", "email": "email:", "phone": "phone:", "linkedin": "linkedin:", "github": "github:", "copy": "copy", "copied": "copied!", "closing": "# process complete — ready for the next call.", "cta": "Email me" }
+      "es": { "line0": "$ ./contact.sh --reach-out", "email": "email:", "phone": "teléfono:", "linkedin": "linkedin:", "github": "github:", "instagram": "instagram:", "tiktok": "tiktok:", "copy": "copiar", "copied": "¡copiado!", "closing": "# proceso completado — listo para la siguiente llamada.", "cta": "Escríbeme" },
+      "en": { "line0": "$ ./contact.sh --reach-out", "email": "email:", "phone": "phone:", "linkedin": "linkedin:", "github": "github:", "instagram": "instagram:", "tiktok": "tiktok:", "copy": "copy", "copied": "copied!", "closing": "# process complete — ready for the next call.", "cta": "Email me" }
     },
     "chatToggle": { "es": "Chatea conmigo", "en": "Chat with me" },
     "chatName": { "es": "Danilove", "en": "Danilove" },
@@ -179,14 +183,24 @@
     { "name": "Angular",            "belt": "black",  "stripes": 4, "logo": "logos/tech/angular.svg",    "years": { "es": "10+ años", "en": "10+ years" }, "category": "frontend" },
     { "name": "React JS",           "belt": "brown",  "stripes": 3, "logo": "logos/tech/react.svg",      "years": { "es": "5 años", "en": "5 years" }, "category": "frontend" },
     { "name": "TypeScript",         "belt": "brown",  "stripes": 2, "logo": "logos/tech/typescript.svg", "years": { "es": "6 años", "en": "6 years" }, "category": "frontend" },
-    { "name": "Ionic / Móvil",      "belt": "purple", "stripes": 2, "logo": "logos/tech/ionic.svg",      "years": { "es": "app bancaria Banco Popular", "en": "banking app, Banco Popular" }, "category": "frontend" },
+    { "name": "Ionic / Móvil",      "belt": "purple", "stripes": 2, "logo": "logos/tech/ionic.svg",      "years": { "es": "2 años", "en": "2 years" }, "category": "frontend" },
     { "name": ".NET / C#",          "belt": "brown",  "stripes": 3, "logo": "logos/tech/dotnet.svg",     "years": { "es": "5 años", "en": "5 years" }, "category": "backend" },
     { "name": "Java / Spring Boot", "belt": "brown",  "stripes": 2, "logo": "logos/tech/spring.svg",     "years": { "es": "4 años", "en": "4 years" }, "category": "backend" },
     { "name": "Node.js",            "belt": "black",  "stripes": 2, "logo": "logos/tech/nodedotjs.svg",  "years": { "es": "9 años", "en": "9 years" }, "category": "backend" },
     { "name": "Express",            "belt": "brown",  "stripes": 2, "logo": "logos/tech/express.svg",    "years": { "es": "4 años", "en": "4 years" }, "category": "backend" },
     { "name": "AWS Cloud / Lambda", "belt": "blue",   "stripes": 3, "logo": "logos/tech/aws.svg",        "years": { "es": "certificado 2026", "en": "certified 2026" }, "category": "backend" },
     { "name": "Docker / Kubernetes","belt": "blue",   "stripes": 1, "logo": "logos/tech/docker.svg",     "years": { "es": "2 años", "en": "2 years" }, "category": "backend" },
-    { "name": "AI-First / Spec-Driven", "belt": "blue", "stripes": 1, "logo": "logos/tech/kiro.svg", "years": { "es": "adopción reciente", "en": "recent adoption" }, "category": "backend" }
+    { "name": "AI-First / Spec-Driven", "belt": "blue", "stripes": 1, "logo": "logos/tech/kiro.svg", "years": { "es": "adopción reciente", "en": "recent adoption" }, "category": "backend" },
+    { "name": "MongoDB",     "belt": "brown", "stripes": 2, "logo": "logos/tech/mongodb.svg",   "years": { "es": "5 años", "en": "5 years" }, "category": "database" },
+    { "name": "SQL Server",  "belt": "brown", "stripes": 2, "logo": "logos/tech/sqlserver.svg", "years": { "es": "5 años", "en": "5 years" }, "category": "database" },
+    { "name": "Firebase",    "belt": "white", "stripes": 2, "logo": "logos/tech/firebase.svg",  "years": { "es": "2016 — 2017", "en": "2016 — 2017" }, "category": "database" },
+    { "name": "Git",         "belt": "black", "stripes": 4, "logo": "logos/tech/git.svg",       "years": { "es": "10+ años", "en": "10+ years" }, "category": "tools" },
+    { "name": "Swagger",     "belt": "brown", "stripes": 2, "logo": "logos/tech/swagger.svg",   "years": { "es": "5 años", "en": "5 years" }, "category": "tools" },
+    { "name": "JWT",         "belt": "brown", "stripes": 2, "logo": "logos/tech/jwt.svg",       "years": { "es": "4 años", "en": "4 years" }, "category": "tools" },
+    { "name": "OAuth2",      "belt": "brown", "stripes": 2, "logo": "logos/tech/oauth2.svg",    "years": { "es": "4 años", "en": "4 years" }, "category": "tools" },
+    { "name": "Postman",     "belt": "brown", "stripes": 2, "logo": "logos/tech/postman.svg",   "years": { "es": "5 años", "en": "5 years" }, "category": "testing" },
+    { "name": "Jest",        "belt": "brown", "stripes": 2, "logo": "logos/tech/jest.svg",      "years": { "es": "4 años", "en": "4 years" }, "category": "testing" },
+    { "name": "JUnit",       "belt": "brown", "stripes": 1, "logo": "logos/tech/junit.svg",     "years": { "es": "3 años", "en": "3 years" }, "category": "testing" }
   ],
   "projects": [
     {

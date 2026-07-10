@@ -1,4 +1,5 @@
 <nav class="tabbar">
+  <div class="menu-backdrop" [class.open]="menuOpen()" (click)="closeMenu()"></div>
   <div class="tabbar-inner">
     <div class="tabbar-tabs" [class.open]="menuOpen()" id="navTabs">
       <button class="tab" [class.active]="activeSection() === 'hero'" (click)="scrollTo('#hero')">
