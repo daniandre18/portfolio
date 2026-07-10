@@ -7,3 +7,12 @@
   <div [innerHTML]="aboutText()"></div>
   <div class="info-card" [innerHTML]="infoCard()"></div>
 </div>
+
+<div class="hobbies-row">
+  <div class="hobbies-label">{{ hobbiesLabel() }}</div>
+  <div class="hobbies-tags">
+    @for (h of hobbyItems(); track h.label) {
+      <span class="hobby-tag">{{ h.icon }} {{ h.label }}</span>
+    }
+  </div>
+</div>

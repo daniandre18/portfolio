@@ -10,6 +10,7 @@
     },
     "downloadCv": { "es": "Descargar CV (PDF)", "en": "Download CV (PDF)" },
     "aboutTitle": { "es": "Sobre mí", "en": "About me" },
+    "hobbiesLabel": { "es": "Fuera del código", "en": "Outside of code" },
     "expTitle": { "es": "Experiencia", "en": "Experience" },
     "expHintFront": { "es": "[ Click ] para ver detalles", "en": "[ Click ] to see more details" },
     "expHintBack": { "es": "[ Click ] para volver", "en": "[ Click ] to go back" },
@@ -264,5 +265,13 @@
     { "num": "60%", "label": { "es": "Reducción de cargas operativas (IFX)", "en": "Operational workload cut (IFX)" } },
     { "num": "2",   "label": { "es": "Bancos en producción: Santander y Popular", "en": "Banks in production: Santander & Popular" } },
     { "num": "AWS", "label": { "es": "Spec-Driven Dev · cert. '26", "en": "Spec-Driven Dev · cert. '26" } }
+  ],
+  "hobbies": [
+    { "icon": "✈️", "label": { "es": "Viajes", "en": "Travel" } },
+    { "icon": "🎬", "label": { "es": "Cine", "en": "Movies" } },
+    { "icon": "🎵", "label": { "es": "Música", "en": "Music" } },
+    { "icon": "🎮", "label": { "es": "Gaming", "en": "Gaming" } },
+    { "icon": "⚽", "label": { "es": "Fútbol", "en": "Football" } },
+    { "icon": "🏋️", "label": { "es": "Gym", "en": "Gym" } }
   ]
 }
