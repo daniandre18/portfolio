@@ -72,7 +72,7 @@
 .chat-fab-icon {
   position: relative;
   line-height: 1;
-  color: #11141a;
+  color: var(--accent-on);
   display: flex;
 
   svg {
@@ -169,7 +169,7 @@
   font-family: var(--mono);
   font-size: 13px;
   font-weight: 700;
-  color: #11141a;
+  color: var(--accent-on);
   background: var(--accent);
   border-radius: 8px;
   padding: 11px 16px;

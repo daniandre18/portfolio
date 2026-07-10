@@ -33,11 +33,11 @@
   &.active {
     background: var(--accent);
     border-color: var(--accent);
-    color: #11141a;
+    color: var(--accent-on);
 
     .filter-count {
       background: rgba(17, 20, 26, .2);
-      color: #11141a;
+      color: var(--accent-on);
     }
   }
 }

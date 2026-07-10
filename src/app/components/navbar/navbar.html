@@ -3,19 +3,19 @@
   <div class="tabbar-inner">
     <div class="tabbar-tabs" [class.open]="menuOpen()" id="navTabs">
       <button class="tab" [class.active]="activeSection() === 'hero'" (click)="scrollTo('#hero')">
-        <span class="dot">●</span> whoami.ts
+        <span class="dot">●</span> {{ navHero() }}
       </button>
       <button class="tab" [class.active]="activeSection() === 'skills'" (click)="scrollTo('#skills')">
-        <span class="dot">●</span> skills.json
+        <span class="dot">●</span> {{ navSkills() }}
       </button>
       <button class="tab" [class.active]="activeSection() === 'experiencia'" (click)="scrollTo('#experiencia')">
-        <span class="dot">●</span> experience.log
+        <span class="dot">●</span> {{ navExperience() }}
       </button>
       <button class="tab" [class.active]="activeSection() === 'proyectos'" (click)="scrollTo('#proyectos')">
-        <span class="dot">●</span> portfolio.md
+        <span class="dot">●</span> {{ navProjects() }}
       </button>
       <button class="tab" [class.active]="activeSection() === 'contacto'" (click)="scrollTo('#contacto')">
-        <span class="dot">●</span> contact.sh
+        <span class="dot">●</span> {{ navContact() }}
       </button>
     </div>
     <div class="toggles">

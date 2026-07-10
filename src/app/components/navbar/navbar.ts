@@ -1,6 +1,7 @@
 import { Component, ElementRef, HostListener, OnDestroy, AfterViewInit, inject, signal, computed } from '@angular/core';
 import { I18nService } from '../../services/i18n.service';
 import { ThemeService } from '../../services/theme.service';
+import { dict } from '../../data/portfolio.data';
 
 @Component({
   selector: 'app-navbar',
@@ -25,6 +26,12 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
 
   readonly themeIcon = computed(() => this.theme.isLight() ? '☾' : '☀');
   readonly langNextLabel = computed(() => this.i18n.lang() === 'es' ? 'EN' : 'ES');
+
+  readonly navHero = computed(() => dict.navHero[this.i18n.lang()]);
+  readonly navSkills = computed(() => dict.navSkills[this.i18n.lang()]);
+  readonly navExperience = computed(() => dict.navExperience[this.i18n.lang()]);
+  readonly navProjects = computed(() => dict.navProjects[this.i18n.lang()]);
+  readonly navContact = computed(() => dict.navContact[this.i18n.lang()]);
 
   readonly menuAriaLabel = computed(() => {
     const es = this.i18n.lang() === 'es';

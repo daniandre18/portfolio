@@ -9,6 +9,11 @@
       "en": "SENIOR FULL STACK ENGINEER · 10+ YEARS · BOGOTÁ, COLOMBIA"
     },
     "downloadCv": { "es": "Descargar CV (PDF)", "en": "Download CV (PDF)" },
+    "navHero": { "es": "inicio.ts", "en": "whoami.ts" },
+    "navSkills": { "es": "habilidades.json", "en": "skills.json" },
+    "navExperience": { "es": "experiencia.log", "en": "experience.log" },
+    "navProjects": { "es": "portafolio.md", "en": "portfolio.md" },
+    "navContact": { "es": "contacto.sh", "en": "contact.sh" },
     "aboutTitle": { "es": "Sobre mí", "en": "About me" },
     "hobbiesLabel": { "es": "Fuera del código", "en": "Outside of code" },
     "educationLabel": { "es": "Formación académica", "en": "Education" },
