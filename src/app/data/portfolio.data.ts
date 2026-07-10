@@ -70,6 +70,13 @@ export interface HobbyItem {
   label: BiLingual;
 }
 
+export interface EducationItem {
+  degree: BiLingual;
+  school: string;
+  date: string;
+  note: BiLingual;
+}
+
 /* Content (copy, experience, skills, projects, stats) lives in
    portfolio-content.json — this file only defines its shape. */
 export const dict = content.dict;
@@ -81,3 +88,4 @@ export const skills = content.skills as SkillItem[];
 export const projects = content.projects as ProjectItem[];
 export const stats = content.stats as StatItem[];
 export const hobbies = content.hobbies as HobbyItem[];
+export const education = content.education as EducationItem[];

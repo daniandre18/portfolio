@@ -14,7 +14,7 @@
           <span class="chrome-dot green"></span>
           <span class="chrome-url">{{ proj.links[0]?.url }}</span>
         </div>
-        <div class="port-shots">
+        <div class="port-shots" [class.shots-3]="proj.shots.length === 3">
           @for (shot of proj.shots; track shot.src) {
             <a class="port-shot" [href]="shot.url" target="_blank" rel="noopener noreferrer">
               <img [src]="shot.src" [alt]="proj.name" loading="lazy" />

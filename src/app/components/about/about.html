@@ -16,3 +16,16 @@
     }
   </div>
 </div>
+
+<div class="education-row">
+  <div class="hobbies-label">{{ educationLabel() }}</div>
+  <div class="education-list">
+    @for (e of educationItems(); track e.degree) {
+      <div class="education-item">
+        <div class="education-degree">{{ e.degree }}</div>
+        <div class="education-school">{{ e.school }}</div>
+        <div class="education-meta">{{ e.date }} · {{ e.note }}</div>
+      </div>
+    }
+  </div>
+</div>
