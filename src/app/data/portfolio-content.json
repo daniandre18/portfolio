@@ -61,6 +61,18 @@
     "contact": {
       "es": { "line0": "$ ./contact.sh --reach-out", "email": "email:", "phone": "teléfono:", "linkedin": "linkedin:", "github": "github:", "copy": "copiar", "copied": "¡copiado!", "closing": "# proceso completado — listo para la siguiente llamada.", "cta": "Escríbeme" },
       "en": { "line0": "$ ./contact.sh --reach-out", "email": "email:", "phone": "phone:", "linkedin": "linkedin:", "github": "github:", "copy": "copy", "copied": "copied!", "closing": "# process complete — ready for the next call.", "cta": "Email me" }
+    },
+    "chatToggle": { "es": "Chatea conmigo", "en": "Chat with me" },
+    "chatName": { "es": "Danilove", "en": "Danilove" },
+    "chatRole": { "es": "Asistente robótico de este portafolio", "en": "This portfolio's robot assistant" },
+    "chatGreeting": {
+      "es": "Hola, soy Danilove 🤖, el asistente de este portafolio. Pregúntame lo que quieras saber sobre mí o sobre este portafolio.",
+      "en": "Hi, I'm Danilove 🤖, this portfolio's assistant. Ask me anything you'd like to know about me or this portfolio."
+    },
+    "chatCta": { "es": "Escribir por WhatsApp", "en": "Message on WhatsApp" },
+    "chatPrefill": {
+      "es": "Hola Danilo! Vi tu portafolio y tengo una pregunta 👋",
+      "en": "Hi Danilo! I saw your portfolio and I have a question 👋"
     }
   },
   "expData": [
@@ -169,6 +181,7 @@
     { "name": ".NET / C#",          "belt": "brown",  "stripes": 3, "logo": "logos/tech/dotnet.svg",     "years": { "es": "5 años", "en": "5 years" }, "category": "backend" },
     { "name": "Java / Spring Boot", "belt": "brown",  "stripes": 2, "logo": "logos/tech/spring.svg",     "years": { "es": "4 años", "en": "4 years" }, "category": "backend" },
     { "name": "Node.js",            "belt": "black",  "stripes": 2, "logo": "logos/tech/nodedotjs.svg",  "years": { "es": "9 años", "en": "9 years" }, "category": "backend" },
+    { "name": "Express",            "belt": "brown",  "stripes": 2, "logo": "logos/tech/express.svg",    "years": { "es": "4 años", "en": "4 years" }, "category": "backend" },
     { "name": "AWS Cloud / Lambda", "belt": "blue",   "stripes": 3, "logo": "logos/tech/aws.svg",        "years": { "es": "certificado 2026", "en": "certified 2026" }, "category": "backend" },
     { "name": "Docker / Kubernetes","belt": "blue",   "stripes": 1, "logo": "logos/tech/docker.svg",     "years": { "es": "2 años", "en": "2 years" }, "category": "backend" },
     { "name": "AI-First / Spec-Driven", "belt": "blue", "stripes": 1, "logo": "logos/tech/kiro.svg", "years": { "es": "adopción reciente", "en": "recent adoption" }, "category": "backend" }
@@ -179,10 +192,10 @@
       "name": { "es": "Metrocuadrado", "en": "Metrocuadrado" },
       "co": "ADL Digital Lab",
       "desc": {
-        "es": "Portal inmobiliario líder en Colombia. Trabajé en el equipo frontend de ADL Digital Lab construyendo con React el portal principal y el buscador interactivo sobre mapa, con filtros geoespaciales en tiempo real sobre miles de inmuebles.",
-        "en": "Colombia's leading real-estate portal. I worked on the ADL Digital Lab frontend team building the main portal and the interactive map-based search with React, with real-time geospatial filters over thousands of listings."
+        "es": "Portal inmobiliario líder en Colombia. Trabajé en el equipo frontend de ADL Digital Lab construyendo con React (con Server-Side Rendering) el portal principal y el buscador interactivo sobre mapa, con filtros geoespaciales en tiempo real sobre miles de inmuebles.",
+        "en": "Colombia's leading real-estate portal. I worked on the ADL Digital Lab frontend team building the main portal and the interactive map-based search with React (with Server-Side Rendering), with real-time geospatial filters over thousands of listings."
       },
-      "stack": ["React", "TypeScript", "Leaflet", "REST API"],
+      "stack": ["React", "SSR", "TypeScript", "Leaflet", "REST API"],
       "images": ["projects/metrocuadrado-home.jpg", "projects/metrocuadrado-mapa.jpg"],
       "links": [
         { "label": { "es": "Portal", "en": "Portal" }, "url": "https://www.metrocuadrado.com/" },

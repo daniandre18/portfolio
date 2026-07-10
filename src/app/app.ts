@@ -8,6 +8,7 @@ import { SkillsComponent } from './components/skills/skills';
 import { ProjectsComponent } from './components/projects/projects';
 import { ContactComponent } from './components/contact/contact';
 import { CursorFxComponent } from './components/cursor-fx/cursor-fx';
+import { ChatWidgetComponent } from './components/chat-widget/chat-widget';
 import { RevealDirective } from './directives/reveal.directive';
 
 @Component({
@@ -22,6 +23,7 @@ import { RevealDirective } from './directives/reveal.directive';
     ProjectsComponent,
     ContactComponent,
     CursorFxComponent,
+    ChatWidgetComponent,
     RevealDirective
   ],
   templateUrl: './app.html',
