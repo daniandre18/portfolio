@@ -4,17 +4,92 @@
   <div class="sec-rule"></div>
 </div>
 
-<div class="proj-grid">
+<div class="port-grid">
   @for (proj of projectItems(); track proj.name) {
-    <div class="proj-card">
-      <span class="proj-tag">{{ proj.tag }}</span>
-      <div class="proj-name">{{ proj.name }}</div>
-      <p class="proj-desc">{{ proj.desc }}</p>
-      <div class="proj-stack">
-        @for (tech of proj.stack; track tech) {
-          <span class="exp-tag">{{ tech }}</span>
+    @if (proj.shots.length) {
+      <div class="port-card port-card--featured">
+        <div class="browser-chrome">
+          <span class="chrome-dot red"></span>
+          <span class="chrome-dot yellow"></span>
+          <span class="chrome-dot green"></span>
+          <span class="chrome-url">{{ proj.links[0]?.url }}</span>
+        </div>
+        <div class="port-shots">
+          @for (shot of proj.shots; track shot.src) {
+            <a class="port-shot" [href]="shot.url" target="_blank" rel="noopener noreferrer">
+              <img [src]="shot.src" [alt]="proj.name" loading="lazy" />
+              <span class="port-shot-overlay">{{ visitLabel() }} <span class="ext">↗</span></span>
+            </a>
+          }
+        </div>
+        <div class="port-body">
+          <div class="port-head">
+            <span class="proj-tag">{{ proj.tag }}</span>
+            @if (proj.co) { <span class="port-co">{{ proj.co }}</span> }
+          </div>
+          <div class="proj-name">{{ proj.name }}</div>
+          <p class="proj-desc">{{ proj.desc }}</p>
+          <div class="proj-stack">
+            @for (tech of proj.stack; track tech) {
+              <span class="exp-tag">{{ tech }}</span>
+            }
+          </div>
+          @if (proj.links.length) {
+            <div class="port-links">
+              @for (link of proj.links; track link.url) {
+                <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="port-link">
+                  <span class="ext">↗</span> {{ link.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    } @else if (proj.logo) {
+      <div class="port-card has-logo">
+        <div class="port-logo-box">
+          <img [src]="proj.logo" [alt]="proj.name" class="port-logo-img" />
+        </div>
+        <div class="port-body">
+          <span class="proj-tag">{{ proj.tag }}</span>
+          <div class="proj-name">{{ proj.name }}</div>
+          <p class="proj-desc">{{ proj.desc }}</p>
+          <div class="proj-stack">
+            @for (tech of proj.stack; track tech) {
+              <span class="exp-tag">{{ tech }}</span>
+            }
+          </div>
+          @if (proj.links.length) {
+            <div class="port-links">
+              @for (link of proj.links; track link.url) {
+                <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="port-link">
+                  <span class="ext">↗</span> {{ link.label }}
+                </a>
+              }
+            </div>
+          }
+        </div>
+      </div>
+    } @else {
+      <div class="port-card">
+        <span class="proj-tag">{{ proj.tag }}</span>
+        <div class="proj-name">{{ proj.name }}</div>
+        <p class="proj-desc">{{ proj.desc }}</p>
+        <div class="proj-stack">
+          @for (tech of proj.stack; track tech) {
+            <span class="exp-tag">{{ tech }}</span>
+          }
+        </div>
+        @if (proj.links.length) {
+          <div class="port-links">
+            @for (link of proj.links; track link.url) {
+              <a [href]="link.url" target="_blank" rel="noopener noreferrer" class="port-link">
+                <span class="ext">↗</span> {{ link.label }}
+              </a>
+            }
+          </div>
         }
       </div>
-    </div>
+    }
   }
 </div>

@@ -39,11 +39,20 @@ export interface SkillItem {
   years: BiLingual;
 }
 
+export interface ProjectLink {
+  label: BiLingual;
+  url: string;
+}
+
 export interface ProjectItem {
   tag: BiLingual;
   name: BiLingual;
+  co?: string;
   desc: BiLingual;
   stack: string[];
+  images?: string[];
+  logo?: string;
+  links?: ProjectLink[];
 }
 
 export interface StatItem {
@@ -67,7 +76,8 @@ export const dict = {
   expHintFront: { es: '[ Click ] para ver detalles', en: '[ Click ] to see more details' },
   expHintBack: { es: '[ Click ] para volver', en: '[ Click ] to go back' },
   skillsTitle: { es: 'Stack técnico', en: 'Tech stack' },
-  projTitle: { es: 'Proyectos propios', en: 'Personal projects' },
+  projTitle: { es: 'Portafolio', en: 'Portfolio' },
+  projVisit: { es: 'Visitar', en: 'Visit' },
   contactTitle: { es: 'Contacto', en: 'Contact' },
   aboutText: {
     es: `<p>Soy Ingeniero de Sistemas con más de <strong>10 años</strong> moviéndome entre frontend y backend, hoy enfocado en arquitecturas de microservicios, APIs REST escalables e integraciones cloud-native para plataformas de alto tráfico — incluyendo apps bancarias.</p>
@@ -253,22 +263,42 @@ export const skills: SkillItem[] = [
 /* ============ PROJECTS ============ */
 export const projects: ProjectItem[] = [
   {
+    tag: { es: 'Proptech · Producción', en: 'Proptech · Production' },
+    name: { es: 'Metrocuadrado', en: 'Metrocuadrado' },
+    co: 'ADL Digital Lab',
+    desc: {
+      es: 'Portal inmobiliario líder en Colombia. Trabajé en el equipo frontend de ADL Digital Lab construyendo con React el portal principal y el buscador interactivo sobre mapa, con filtros geoespaciales en tiempo real sobre miles de inmuebles.',
+      en: "Colombia's leading real-estate portal. I worked on the ADL Digital Lab frontend team building the main portal and the interactive map-based search with React, with real-time geospatial filters over thousands of listings."
+    },
+    stack: ['React', 'TypeScript', 'Leaflet', 'REST API'],
+    images: ['projects/metrocuadrado-home.jpg', 'projects/metrocuadrado-mapa.jpg'],
+    links: [
+      { label: { es: 'Portal', en: 'Portal' }, url: 'https://www.metrocuadrado.com/' },
+      { label: { es: 'Mapa interactivo', en: 'Interactive map' }, url: 'https://www.metrocuadrado.com/mapa' }
+    ]
+  },
+  {
+    tag: { es: 'Banca digital · Producción', en: 'Digital banking · Production' },
+    name: { es: 'Banco Popular — Banca en línea', en: 'Banco Popular — Online banking' },
+    desc: {
+      es: 'Plataforma transaccional y app móvil del banco. Lideré el proyecto de la agenda de contactos para transferencias, y trabajé en el equipo que construyó el historial de transferencias y el módulo de tarjeta de crédito — con Angular en el portal web y Ionic en la app móvil.',
+      en: "The bank's transactional platform and mobile app. I led the contact agenda for transfers project, and worked on the team that built the transfer history and credit card module — with Angular on the web portal and Ionic on the mobile app."
+    },
+    stack: ['Angular', 'Ionic', 'REST API'],
+    logo: 'logos/banco-popular.png',
+    links: [
+      { label: { es: 'Portal transaccional', en: 'Transactional portal' }, url: 'https://mi.bancopopular.com.co/' }
+    ]
+  },
+  {
     tag: { es: 'AI Agent · Automatización', en: 'AI Agent · Automation' },
     name: { es: 'Validador de pedidos COD', en: 'COD order validator' },
     desc: {
       es: 'Agente que integra Shopify, Dropi y Google Maps para validar direcciones y calificar el riesgo de cada pedido contraentrega con un sistema tipo semáforo, antes de que llegue a logística.',
       en: 'An agent that integrates Shopify, Dropi and Google Maps to validate addresses and score the risk of each cash-on-delivery order with a traffic-light system, before it reaches fulfillment.'
     },
-    stack: ['Shopify API', 'Dropi', 'Google Maps API', 'AI-First']
-  },
-  {
-    tag: { es: 'E-commerce · Shopify', en: 'E-commerce · Shopify' },
-    name: { es: 'Importaciones Korea', en: 'Importaciones Korea' },
-    desc: {
-      es: 'Tienda de skincare coreano construida sobre el theme Horizon, con componentes de home y página de producto desarrollados a mano en Custom Liquid.',
-      en: 'Korean skincare store built on the Horizon theme, with home and product page components hand-built in Custom Liquid.'
-    },
-    stack: ['Shopify Liquid', 'HTML/CSS', 'DTC / COD']
+    stack: ['Shopify API', 'Dropi', 'Google Maps API', 'AI-First'],
+    logo: 'logos/cod-validator.svg'
   }
 ];
 
