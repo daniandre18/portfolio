@@ -1,8 +1,8 @@
 {
   "dict": {
     "heroSub": {
-      "es": "Construyo interfaces con Angular y React, backends con Java/Spring Boot y .NET, y últimamente agentes de IA que automatizan procesos reales — desde validar pedidos hasta aprovisionar infraestructura cloud.",
-      "en": "I build interfaces with Angular and React, backends with Java/Spring Boot and .NET, and lately, AI agents that automate real processes — from validating orders to provisioning cloud infrastructure."
+      "es": "Full Stack Engineer que vive en la intersección entre ingeniería y producto: construyo interfaces con Angular y React, backends robustos con Java/Spring Boot y .NET, y últimamente agentes de IA que resuelven problemas reales — desde validar pedidos hasta levantar infraestructura cloud en producción.",
+      "en": "Full Stack Engineer living at the intersection of engineering and product: I build interfaces with Angular and React, solid backends with Java/Spring Boot and .NET, and lately AI agents that solve real problems — from validating orders to standing up cloud infrastructure in production."
     },
     "heroRole": {
       "es": "FULL STACK ENGINEER SR · 10+ AÑOS · BOGOTÁ, COLOMBIA",
@@ -166,11 +166,11 @@
     { "name": "React JS",           "belt": "brown",  "stripes": 3, "logo": "logos/tech/react.svg",      "years": { "es": "5 años", "en": "5 years" }, "category": "frontend" },
     { "name": "TypeScript",         "belt": "brown",  "stripes": 2, "logo": "logos/tech/typescript.svg", "years": { "es": "6 años", "en": "6 years" }, "category": "frontend" },
     { "name": "Ionic / Móvil",      "belt": "purple", "stripes": 2, "logo": "logos/tech/ionic.svg",      "years": { "es": "app bancaria Banco Popular", "en": "banking app, Banco Popular" }, "category": "frontend" },
-    { "name": ".NET / C#",          "belt": "black",  "stripes": 3, "logo": "logos/tech/dotnet.svg",     "years": { "es": "9 años", "en": "9 years" }, "category": "backend" },
-    { "name": "Java / Spring Boot", "belt": "brown",  "stripes": 2, "logo": "logos/tech/spring.svg",     "years": { "es": "5 años", "en": "5 years" }, "category": "backend" },
-    { "name": "Node.js",            "belt": "brown",  "stripes": 3, "logo": "logos/tech/nodedotjs.svg",  "years": { "es": "6 años", "en": "6 years" }, "category": "backend" },
+    { "name": ".NET / C#",          "belt": "brown",  "stripes": 3, "logo": "logos/tech/dotnet.svg",     "years": { "es": "5 años", "en": "5 years" }, "category": "backend" },
+    { "name": "Java / Spring Boot", "belt": "brown",  "stripes": 2, "logo": "logos/tech/spring.svg",     "years": { "es": "4 años", "en": "4 years" }, "category": "backend" },
+    { "name": "Node.js",            "belt": "black",  "stripes": 2, "logo": "logos/tech/nodedotjs.svg",  "years": { "es": "9 años", "en": "9 years" }, "category": "backend" },
     { "name": "AWS Cloud / Lambda", "belt": "blue",   "stripes": 3, "logo": "logos/tech/aws.svg",        "years": { "es": "certificado 2026", "en": "certified 2026" }, "category": "backend" },
-    { "name": "Docker / Kubernetes","belt": "blue",   "stripes": 2, "logo": "logos/tech/docker.svg",     "years": { "es": "4 años", "en": "4 years" }, "category": "backend" },
+    { "name": "Docker / Kubernetes","belt": "blue",   "stripes": 1, "logo": "logos/tech/docker.svg",     "years": { "es": "2 años", "en": "2 years" }, "category": "backend" },
     { "name": "AI-First / Spec-Driven", "belt": "blue", "stripes": 1, "logo": "logos/tech/kiro.svg", "years": { "es": "adopción reciente", "en": "recent adoption" }, "category": "backend" }
   ],
   "projects": [

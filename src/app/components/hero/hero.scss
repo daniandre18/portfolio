@@ -193,4 +193,11 @@
     width: 17px;
     height: 17px;
   }
+
+  @media (max-width: 720px) {
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }

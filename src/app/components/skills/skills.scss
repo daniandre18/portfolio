@@ -63,8 +63,14 @@
   flex: 1;
   min-width: 0;
   overflow: hidden;
+  cursor: grab;
+  touch-action: pan-y;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
   mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+
+  &.dragging {
+    cursor: grabbing;
+  }
 }
 
 .marquee-track {
@@ -73,6 +79,33 @@
   width: max-content;
   padding: 4px 2px 10px;
   will-change: transform;
+  user-select: none;
+  -webkit-user-select: none;
+
+  img {
+    -webkit-user-drag: none;
+    pointer-events: none;
+  }
+}
+
+.skill-grid-mobile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+
+  .skill-card {
+    flex-basis: auto;
+    padding: 12px 14px;
+  }
+
+  .skill-logo {
+    width: 26px;
+    height: 26px;
+  }
+
+  .skill-name {
+    font-size: 14px;
+  }
 }
 
 .skill-card {
