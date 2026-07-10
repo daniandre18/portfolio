@@ -1,37 +1,77 @@
 <div class="sec-head">
-  <span class="sec-num">// 03</span>
+  <span class="sec-num">// 02</span>
   <span class="sec-title">{{ title() }}</span>
   <div class="sec-rule"></div>
 </div>
 
 <p class="belt-note" [innerHTML]="beltNote()"></p>
 
-<div class="skill-grid">
-  @for (skill of skillItems(); track skill.name) {
-    <div class="skill-card">
-      <div class="skill-top">
-        <div class="skill-name-row">
-          @if (skill.logo) {
-            <span class="skill-logo">
-              <img [src]="skill.logo" [alt]="skill.name" />
+<div class="skill-group">
+  <div class="skill-group-label">{{ frontendLabel() }}</div>
+  <div class="marquee marquee-left">
+    <div class="marquee-track">
+      @for (skill of frontendItems(); track $index) {
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-name-row">
+              @if (skill.logo) {
+                <span class="skill-logo">
+                  <img [src]="skill.logo" [alt]="skill.name" />
+                </span>
+              }
+              <span class="skill-name">{{ skill.name }}</span>
+            </div>
+            <span class="belt-label"
+                  [style.background]="skill.beltColor"
+                  [style.color]="skill.beltTextOn">
+              {{ skill.beltLabel }}
             </span>
-          }
-          <span class="skill-name">{{ skill.name }}</span>
+          </div>
+          <div class="belt-bar" [style.background]="skill.beltColor">
+            <div class="stripes">
+              @for (s of skill.stripes; track $index) {
+                <span class="stripe"></span>
+              }
+            </div>
+          </div>
+          <div class="skill-years">{{ skill.years }}</div>
         </div>
-        <span class="belt-label"
-              [style.background]="skill.beltColor"
-              [style.color]="skill.beltTextOn">
-          {{ skill.beltLabel }}
-        </span>
-      </div>
-      <div class="belt-bar" [style.background]="skill.beltColor">
-        <div class="stripes">
-          @for (s of skill.stripes; track $index) {
-            <span class="stripe"></span>
-          }
-        </div>
-      </div>
-      <div class="skill-years">{{ skill.years }}</div>
+      }
     </div>
-  }
+  </div>
+</div>
+
+<div class="skill-group">
+  <div class="skill-group-label">{{ backendLabel() }}</div>
+  <div class="marquee marquee-right">
+    <div class="marquee-track">
+      @for (skill of backendItems(); track $index) {
+        <div class="skill-card">
+          <div class="skill-top">
+            <div class="skill-name-row">
+              @if (skill.logo) {
+                <span class="skill-logo">
+                  <img [src]="skill.logo" [alt]="skill.name" />
+                </span>
+              }
+              <span class="skill-name">{{ skill.name }}</span>
+            </div>
+            <span class="belt-label"
+                  [style.background]="skill.beltColor"
+                  [style.color]="skill.beltTextOn">
+              {{ skill.beltLabel }}
+            </span>
+          </div>
+          <div class="belt-bar" [style.background]="skill.beltColor">
+            <div class="stripes">
+              @for (s of skill.stripes; track $index) {
+                <span class="stripe"></span>
+              }
+            </div>
+          </div>
+          <div class="skill-years">{{ skill.years }}</div>
+        </div>
+      }
+    </div>
+  </div>
 </div>

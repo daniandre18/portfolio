@@ -59,7 +59,7 @@ export class NavbarComponent implements AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit() {
-    const ids = ['hero', 'experiencia', 'skills', 'proyectos', 'contacto'];
+    const ids = ['hero', 'skills', 'experiencia', 'proyectos', 'contacto'];
     const sections = ids.map(id => document.getElementById(id)).filter(Boolean) as HTMLElement[];
 
     this.observer = new IntersectionObserver(entries => {

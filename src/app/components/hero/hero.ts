@@ -56,10 +56,6 @@ export class HeroComponent implements OnInit {
     this.appendOutput('welcome');
   }
 
-  scrollTo(id: string) {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-
   onEnter(input: HTMLInputElement) {
     const val = input.value;
     input.value = '';

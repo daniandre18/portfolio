@@ -7,6 +7,7 @@ import { ExperienceComponent } from './components/experience/experience';
 import { SkillsComponent } from './components/skills/skills';
 import { ProjectsComponent } from './components/projects/projects';
 import { ContactComponent } from './components/contact/contact';
+import { CursorFxComponent } from './components/cursor-fx/cursor-fx';
 import { RevealDirective } from './directives/reveal.directive';
 
 @Component({
@@ -20,6 +21,7 @@ import { RevealDirective } from './directives/reveal.directive';
     SkillsComponent,
     ProjectsComponent,
     ContactComponent,
+    CursorFxComponent,
     RevealDirective
   ],
   templateUrl: './app.html',

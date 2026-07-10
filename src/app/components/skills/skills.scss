@@ -1,21 +1,77 @@
 .belt-note {
   color: var(--text-mute);
   font-size: 13.5px;
-  margin-bottom: 26px;
-  max-width: 65ch;
+  margin-bottom: 18px;
 }
 
-.skill-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+.skill-group {
+  margin-bottom: 22px;
 
-  @media (max-width: 680px) {
-    grid-template-columns: 1fr;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.skill-group-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+
+  &::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-soft);
+  }
+}
+
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 32px, #000 calc(100% - 32px), transparent);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  padding: 4px 2px 10px;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+.marquee-right .marquee-track {
+  animation-direction: reverse;
+  animation-duration: 40s;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
   }
 }
 
 .skill-card {
+  flex: 0 0 228px;
   background: var(--bg-panel);
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -24,8 +80,9 @@
 
 .skill-top {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
   margin-bottom: 10px;
 }
 
@@ -38,9 +95,9 @@
 
 .skill-logo {
   flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 7px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
   background: #fff;
   border: 1px solid var(--border-soft);
   display: flex;
@@ -48,8 +105,8 @@
   justify-content: center;
 
   img {
-    width: 16px;
-    height: 16px;
+    width: 19px;
+    height: 19px;
     object-fit: contain;
     display: block;
   }
@@ -58,25 +115,24 @@
 .skill-name {
   font-family: var(--display);
   font-weight: 600;
-  font-size: 14.5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 15.5px;
+  line-height: 1.25;
+  min-width: 0;
 }
 
 .belt-label {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 10.5px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 10px;
   color: #11141a;
   font-weight: 600;
 }
 
 .belt-bar {
-  height: 9px;
+  height: 10px;
   border-radius: 5px;
   position: relative;
   overflow: hidden;
@@ -94,14 +150,15 @@
 
 .stripe {
   width: 3px;
-  height: 7px;
+  height: 8px;
   background: #fff;
   box-shadow: 0 0 0 1px rgba(0, 0, 0, .35);
 }
 
 .skill-years {
   font-family: var(--mono);
-  font-size: 10.5px;
-  color: var(--text-dim);
-  margin-top: 7px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--secondary);
+  margin-top: 9px;
 }
